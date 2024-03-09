@@ -1,5 +1,5 @@
-import { httpPost } from "../apiHelper";
-import apiEndPoints from "../apiEndPoints";
+import { httpPost } from "../Fragments/apiHelper";
+import apiEndPoints from "../Fragments/apiEndPoints";
 
 export const register = (data) => {
     return httpPost(apiEndPoints.REGISTER, data)

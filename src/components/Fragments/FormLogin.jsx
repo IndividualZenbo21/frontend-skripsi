@@ -1,7 +1,7 @@
 import InputForm from "../Elements/Input/Index"
 import Button from "../Elements/Button"
 import * as React from "react"
-import { login } from "../service/LoginService"
+import { login } from "./service/LoginService"
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({
@@ -19,8 +19,8 @@ const FormLogin = () => {
 
     const response = await login(data);
 
-    if (response && response.state === 'SUCCESS') {
-      window.location.href = '/products';
+    if (response.state === 'SUCCESS') {
+      console.log('Login Success');
     } else {
       console.error('Login Failed');
     }

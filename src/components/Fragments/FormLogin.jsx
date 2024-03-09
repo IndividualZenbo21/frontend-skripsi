@@ -19,8 +19,8 @@ const FormLogin = () => {
 
     const response = await login(data);
 
-    if (response.state === 'SUCCESS') {
-      console.log('Login Success');
+    if (response && response.state === 'SUCCESS') {
+      window.location.href = '/products';
     } else {
       console.error('Login Failed');
     }

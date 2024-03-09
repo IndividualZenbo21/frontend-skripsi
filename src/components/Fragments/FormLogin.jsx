@@ -1,7 +1,7 @@
 import InputForm from "../Elements/Input/Index"
 import Button from "../Elements/Button"
 import * as React from "react"
-import { login } from "./service/LoginService"
+import { login } from "../service/LoginService"
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({

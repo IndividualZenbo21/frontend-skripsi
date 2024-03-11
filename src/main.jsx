@@ -8,20 +8,23 @@ import RegisterPage from './pages/register';
 import ProductPage from './pages/products';
 import ErrorPage from './pages/404';
 
-const BASE_PATH = '/frontend-skripsi';
+export const pathConfig = {
+  '/': LoginPage,
+  '/login': LoginPage,
+  '/regitster': RegisterPage,
+  '/products': ProductPage,
+};
 
-const router = createBrowserRouter([
-  { path: `${BASE_PATH}/`, 
-    element: <div>Hello World!</div> 
-  },
-  { path: `${BASE_PATH}/login`, element: <LoginPage /> },
-  { path: `${BASE_PATH}/register`, element: <RegisterPage /> },
-  { path: `${BASE_PATH}/products`, element: <ProductPage /> },
-  { path: '*', element: <ErrorPage/> },
-]);
+const rootElement = document.getElementById('root');
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>
-);
+  if (rootElement) {
+    const path = window.location.pathname;
+    const ComponentToRender = pathConfig[path] || ErrorPage;
+
+    ReactDOM.createRoot(rootElement).render(
+      <React.StrictMode>
+        <ComponentToRender />
+      </React.StrictMode>
+    );
+  }
+

@@ -22,7 +22,7 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
-      window.location.href = `${config.baseUrl}/product`;
+      window.location.href = `${config.baseUrl}/products`;
     } else {
       console.error('Login Failed');
     }

@@ -15,6 +15,8 @@ export function httpPost(url, data, conf = {}, extra = {}) {
         ...config,
         method: 'POST',
         data: JSON.stringify(data),
+        withCredentials: true
+
     },
     {...extra}
   ).then(res => {

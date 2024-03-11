@@ -37,8 +37,8 @@ const FormLogin = () => {
   };
   
   const isDisabled = React.useMemo(() => {
-    return formState.email === '' || formState.password === '' || loading;
-  }, [formState, loading]);
+    return formState.email === '' || formState.password === '';
+  }, [formState]);
 
     return (
       <>

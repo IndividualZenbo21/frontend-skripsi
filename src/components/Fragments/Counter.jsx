@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Elements/Button";
 
 class Counter extends React.Component{
     constructor(props) {
@@ -27,7 +26,6 @@ class Counter extends React.Component{
         return (
             <div className="flex items-center">
                 <h1 className="mr-5">{this.state.count}</h1>
-                <Button variant="bg-black text-white p-3 flex items-center" onClick={() => this.setState({count: this.state.count + 1})}>+</Button>
                 {console.log("render")}
             </div>
         )

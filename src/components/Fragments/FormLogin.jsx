@@ -1,6 +1,7 @@
 import * as React from "react"
 import { login } from "../service/LoginService"
 import config from '../config/default.json'
+import { useHistory } from 'react-router-dom';
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({
@@ -8,7 +9,7 @@ const FormLogin = () => {
     password: ''
   });
   const [loading, setLoading] = React.useState(false);
-
+  const history = useHistory();
 
   const executeLogin = async () => {
     const { email, password } = formState;
@@ -22,7 +23,7 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
-      window.location.href = `${config.baseUrl}/products`;
+      history.push('/products');
     } else {
       console.error('Login Failed');
     }

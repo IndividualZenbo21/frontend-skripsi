@@ -8,3 +8,5 @@ const ProductPage = () => {
         </AuthLayout>
     )
 }
+
+export default ProductPage

@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge'
-import {fetch, axios} from 'axios';
+import { axios } from 'axios';
 
 const DEFAULT_REQUEST_CONFIG = {
     headers: {

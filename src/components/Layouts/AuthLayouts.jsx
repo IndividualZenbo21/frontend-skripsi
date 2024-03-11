@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import FormLogin from "../Fragments/FormLogin"
 
+const BASE_PATH = '/frontend-skripsi';
 const AuthLayout = (props) => {
     const {children, title, type} = props
     return (
@@ -22,14 +23,14 @@ const Navigation = ({type}) => {
         return (
             <p className="text-sm mt-5 text-center">
                 Don't have an account? {" "}
-                <Link to="/register" className="font-bold text-blue-600">Sign Up</Link>
+                <Link to={`${BASE_PATH}/register`} className="font-bold text-blue-600">Sign Up</Link>
             </p>
         )
     }else{
         return (
             <p className="text-sm mt-5 text-center">
                 Already have an account? {" "}
-                <Link to="/login" className="font-bold text-blue-600">Login</Link>
+                <Link to={`${BASE_PATH}/login`} className="font-bold text-blue-600">Login</Link>
             </p>
         )
     }

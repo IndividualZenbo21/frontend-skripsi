@@ -48,7 +48,7 @@ const FormLogin = () => {
           </div>
           <div className="mb-6">
             <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="password" type="password" placeholder="*****" onChange={setHandleFormChange('email')} value={formState.password} disabled={loading}/>
+            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="password" type="password" placeholder="*****" onChange={setHandleFormChange('password')} value={formState.password} disabled={loading}/>
           </div>
           <button
             className="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white"

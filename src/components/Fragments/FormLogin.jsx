@@ -1,5 +1,3 @@
-import InputForm from "../Elements/Input/Index"
-import Button from "../Elements/Button"
 import * as React from "react"
 import { login } from "../service/LoginService"
 
@@ -19,7 +17,7 @@ const FormLogin = () => {
 
     const response = await login(data);
 
-    if (response && response.state === 'SUCCESS') {
+    if (response && response.status === 'OK') {
       window.location.href = '/products';
     } else {
       console.error('Login Failed');
@@ -35,8 +33,8 @@ const FormLogin = () => {
   };
 
     return (
-        <form onSubmit={executeLogin}>
-          <div className="mb-6">
+      <>
+      <div className="mb-6">
             <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="email" type="email" placeholder="example@mail.com" name="email" id="email" onChange={setHandleFormChange('email')}/>
           </div>
@@ -46,10 +44,12 @@ const FormLogin = () => {
           </div>
           <button
             className="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white"
-            type="submit">
+            type="submit"
+            onSubmit={executeLogin}>
               Login
           </button>
-        </form>
+      </>
+          
     )
 }
 

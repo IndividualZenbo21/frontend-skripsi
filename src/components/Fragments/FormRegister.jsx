@@ -1,10 +1,7 @@
-import InputForm from "../Elements/Input/Index"
-import Button from "../Elements/Button"
-
 const FormRegister = () => {
     return (
-        <form action="">
-          <div className="mb-6">
+        <>
+        <div className="mb-6">
             <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="fullname">Fullname</label>
             <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="fullname" type="text" placeholder="insert your name here..." name="fullname" id="fullname"/>
           </div>
@@ -24,7 +21,7 @@ const FormRegister = () => {
             className="h-10 px-6 font-semibold rounded-md bg-blue-600 w-full text-white">
               Register
           </button>
-        </form>
+        </>
     )
 }
 

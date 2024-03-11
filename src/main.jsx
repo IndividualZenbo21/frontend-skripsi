@@ -7,7 +7,7 @@ import RegisterPage from './pages/register.jsx'
 import ErrorPage from './pages/404.jsx'
 import ProductPage from './pages/products.jsx'
 
-const router = createBrowserRouter ([
+const route = [
   {
     path:"/",
     element: <div>Hello World</div>,
@@ -25,7 +25,9 @@ const router = createBrowserRouter ([
     path:"/products",
     element: <ProductPage/>
   }
-])
+]
+
+const router = createBrowserRouter (route)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

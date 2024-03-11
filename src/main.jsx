@@ -12,7 +12,7 @@ const BASE_PATH = '/frontend-skripsi';
 
 const router = createBrowserRouter([
   { path: `${BASE_PATH}/`, 
-    element: <div>Hello World!</div> 
+    element: <LoginPage />,
   },
   { path: `${BASE_PATH}/login`, element: <LoginPage /> },
   { path: `${BASE_PATH}/register`, element: <RegisterPage /> },

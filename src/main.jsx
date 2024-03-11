@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, HashRouter, RouterProvider } from 'react-router-dom';
-import { routes } from './routes';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
 import ProductPage from './pages/products';
@@ -11,9 +10,7 @@ import ErrorPage from './pages/404';
 const BASE_PATH = '/frontend-skripsi';
 
 const router = createBrowserRouter([
-  { path: `${BASE_PATH}/`, 
-    element: <LoginPage />,
-  },
+  { path: `${BASE_PATH}/`, element: <LoginPage />},
   { path: `${BASE_PATH}/login`, element: <LoginPage /> },
   { path: `${BASE_PATH}/register`, element: <RegisterPage /> },
   { path: `${BASE_PATH}/products`, element: <ProductPage /> },
@@ -22,6 +19,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HashRouter router={router}></HashRouter>
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { login } from "../service/LoginService"
+import config from '../config/default.json'
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({
@@ -21,7 +22,7 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
-      window.location.href = '/products';
+      window.location.href = `${config.baseUrl}/product`;
     } else {
       console.error('Login Failed');
     }

@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react"
 import CardProduct from "../components/Fragments/CardProduct"
+import axios from "axios";
 
 const products = [
     {
@@ -84,11 +85,21 @@ const ProductPage = () => {
     //     localStorage.setItem("cart", JSON.stringify(cartRef.current));
     // }
 
+    const auth = () => {
+        axios.get("https://www.epskr24.my.id/api/auth/test")
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    }
+
     return (
         //harus return dalam 1 parent
         //coba latihan buat navbar component
         <Fragment>
-            
+            <button onClick={auth}>TEST API</button>
             <div className=" flex justify-end h-20 bg-blue-600 text-white items-center px-10">
                 {getEmail}
             </div>

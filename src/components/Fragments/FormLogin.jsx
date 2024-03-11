@@ -1,6 +1,7 @@
 import * as React from "react"
 import { login } from "../service/LoginService"
 import config from '../config/default.json'
+import Cookies from "js-cookie";
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({
@@ -22,6 +23,7 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
+      console.log(Cookies.get());
       window.location.href = `${config.baseUrl}/products`;
     } else {
       console.error('Login Failed');

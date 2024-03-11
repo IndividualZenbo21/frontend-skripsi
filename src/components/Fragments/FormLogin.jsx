@@ -24,10 +24,8 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
-      document.cookie = 
-      axios.get("https://www.epskr24.my.id/api/auth/test", {
-        withCredentials: true
-      })
+      console.log(Cookies.get());
+      axios.get("https://www.epskr24.my.id/api/auth/test")
       //window.location.href = `${config.baseUrl}/products`;
     } else {
       console.error('Login Failed');

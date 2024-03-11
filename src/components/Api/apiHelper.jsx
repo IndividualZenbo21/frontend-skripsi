@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge'
-import fetch from 'axios'
+import {fetch, axios} from 'axios';
 
 const DEFAULT_REQUEST_CONFIG = {
     headers: {
@@ -24,10 +24,10 @@ export function httpPost(url, data, conf = {}, extra = {}) {
   })
 }
 
-export function rejectError(response) {
-    if (response.data.state == 'SUCCESS') {
-        return Promise.resolve(response.data)
-    } else {
-        return Promise.reject(response.data.message)
-    }
+export function httpGet(url) {
+    return axios.get(url, {
+        withCredentials: true
+    }).then(res => {
+        return res.data
+    })
 } 

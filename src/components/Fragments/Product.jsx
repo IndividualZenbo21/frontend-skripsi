@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react"
 import CardProduct from "./CardProduct";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import config from "../../config/default.json";
+import config from "../config/default.json";
 
 const products = [
     {

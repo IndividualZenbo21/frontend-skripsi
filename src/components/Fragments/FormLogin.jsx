@@ -23,7 +23,7 @@ const FormLogin = () => {
     const response = await login(data);
 
     if (response && response.status === 'OK') {
-      navigate('/products');
+      navigate(`${config.baseUrl}/products`);
     } else {
       console.error('Login Failed');
     }

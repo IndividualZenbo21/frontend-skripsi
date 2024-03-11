@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react"
 import CardProduct from "./CardProduct";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import config from "../../config/default.json";
 
 const products = [
     {
@@ -54,7 +55,7 @@ const Product = () => {
     const handleLogout = () => {
         localStorage.removeItem('email')
         localStorage.removeItem('password')
-        navigate('/login')
+        navigate(`${config.baseUrl}/login`)
     }
 
     const handleAddToCart = (id) => {

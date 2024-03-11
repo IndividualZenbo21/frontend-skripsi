@@ -7,7 +7,7 @@ const FormRegister = () => {
           </div>
           <div className="mb-6">
             <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
-            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="email" type="email" placeholder="example@mail.com" name="email" id="email" onChange={setHandleFormChange('email')}/>
+            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="email" type="email" placeholder="example@mail.com" name="email" id="email"/>
           </div>
           <div className="mb-6">
             <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="password">Password</label>

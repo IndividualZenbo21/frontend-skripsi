@@ -6,7 +6,7 @@ import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
 import ProductPage from './pages/products';
 import ErrorPage from './pages/404';
-import config from './config/default.json';
+import config from './components/config/default.json';
 
 const router = createBrowserRouter([
   { path: `${config.BASE_PATH}/`, element: <LoginPage />},

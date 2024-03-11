@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react"
 import CardProduct from "./CardProduct";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const products = [
     {
@@ -28,7 +28,7 @@ const products = [
 ]
 
 const getEmail = localStorage.getItem("email");
-const history = useHistory();
+const navigate = useNavigate;
 
 const Product = () => {
     const [cart, setCart] = useState([])
@@ -53,7 +53,7 @@ const Product = () => {
     const handleLogout = () => {
         localStorage.removeItem('email')
         localStorage.removeItem('password')
-        history.push('/login')
+        navigate('/login')
     }
 
     const handleAddToCart = (id) => {

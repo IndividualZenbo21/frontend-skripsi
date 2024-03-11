@@ -28,7 +28,6 @@ const products = [
 ]
 
 const getEmail = localStorage.getItem("email");
-const navigate = useNavigate;
 
 const Product = () => {
     const [cart, setCart] = useState([])
@@ -49,6 +48,8 @@ const Product = () => {
             setTotalPrice(0)
         }
     }, [cart])
+
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem('email')

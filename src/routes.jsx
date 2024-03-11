@@ -10,4 +10,3 @@ export const routes = [
     { path: '/products', component: ProductPage },
     { path: '*', component: ErrorPage },
   ];
-  

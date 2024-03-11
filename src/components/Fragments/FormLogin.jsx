@@ -45,7 +45,7 @@ const FormLogin = () => {
           <button
             className="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white"
             type="submit"
-            onSubmit={executeLogin}>
+            onClick={executeLogin}>
               Login
           </button>
       </>

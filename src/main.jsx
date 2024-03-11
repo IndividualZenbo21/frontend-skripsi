@@ -15,6 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         ))}
       </Switch>
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

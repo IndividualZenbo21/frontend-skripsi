@@ -5,8 +5,8 @@ import ProductPage from './pages/products.jsx'
 
 export const routes = [
     { path: '/', component: () => <div>Hello World</div>, exact: true },
-    { path: '/login', component: LoginPage },
-    { path: '/register', component: RegisterPage },
-    { path: '/products', component: ProductPage },
+    { path: '/login', component: LoginPage, exact: true },
+    { path: '/register', component: RegisterPage, exact: true },
+    { path: '/products', component: ProductPage, exact: true },
     { path: '*', component: ErrorPage },
   ];

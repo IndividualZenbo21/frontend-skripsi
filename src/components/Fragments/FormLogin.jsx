@@ -2,6 +2,7 @@ import * as React from "react"
 import { login } from "../service/LoginService"
 import config from '../config/default.json'
 import Cookies from "js-cookie";
+import axios from "axios";
 
 const FormLogin = () => {
   const [formState, setFormState] = React.useState({
@@ -24,7 +25,8 @@ const FormLogin = () => {
 
     if (response && response.status === 'OK') {
       console.log(Cookies.get());
-      window.location.href = `${config.baseUrl}/products`;
+      axios.get("https://www.epskr24.my.id/api/auth/test")
+      //window.location.href = `${config.baseUrl}/products`;
     } else {
       console.error('Login Failed');
     }
@@ -43,6 +45,16 @@ const FormLogin = () => {
     return formState.email === '' || formState.password === '';
   }, [formState]);
 
+  const auth = () => {
+    axios.get("https://www.epskr24.my.id/api/auth/test")
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+  } 
+
     return (
       <>
       <div className="mb-6">
@@ -60,6 +72,9 @@ const FormLogin = () => {
             onClick={executeLogin}>
               Login
           </button>
+          <button onClick={auth}
+          className="h-10 px-6 font-semibold rounded-md bg-blue-600 w-full text-white mt-2"
+          >TEST API</button>
       </>
           
     )

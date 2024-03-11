@@ -48,7 +48,9 @@ const FormLogin = () => {
   }, [formState]);
 
   const auth = () => {
-    axios.get("https://www.epskr24.my.id/api/auth/test")
+    axios.get("https://www.epskr24.my.id/api/auth/test", {
+      withCredentials: true
+    })
         .then(response => {
             console.log(response.data);
         })

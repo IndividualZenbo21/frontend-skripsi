@@ -9,10 +9,10 @@ import ErrorPage from './pages/404';
 import config from './components/config/default.json';
 
 const router = createBrowserRouter([
-  { path: `${config.BASE_PATH}/`, element: <LoginPage />},
-  { path: `${config.BASE_PATH}/login`, element: <LoginPage /> },
-  { path: `${config.BASE_PATH}/register`, element: <RegisterPage /> },
-  { path: `${config.BASE_PATH}/products`, element: <ProductPage /> },
+  { path: `${config.baseUrl}/`, element: <LoginPage />},
+  { path: `${config.baseUrl}/login`, element: <LoginPage /> },
+  { path: `${config.baseUrl}/register`, element: <RegisterPage /> },
+  { path: `${config.baseUrl}/products`, element: <ProductPage /> },
   { path: '*', element: <ErrorPage/> },
 ]);
 

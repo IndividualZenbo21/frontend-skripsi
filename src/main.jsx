@@ -9,6 +9,7 @@ import ProductPage from './pages/products.jsx'
 
 const router = createBrowserRouter ([
   {
+    path:"/",
     element: <div>Hello World</div>,
     errorElement: <ErrorPage/>
   },
@@ -28,6 +29,6 @@ const router = createBrowserRouter ([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div>Hello World</div>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

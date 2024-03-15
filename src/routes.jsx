@@ -1,14 +1,16 @@
-import LoginPage from './pages/login.jsx'
-import RegisterPage from './pages/register.jsx'
-import ErrorPage from './pages/404.jsx'
-import ProductPage from './pages/products.jsx'
+import { createBrowserRouter } from 'react-router-dom';
+import LoginPage from './pages/login';
+import RegisterPage from './pages/register';
+import ProductPage from './pages/products';
+import ErrorPage from './pages/404';
+import config from './components/Config/default.json';
 
-const BASE_PATH = '/frontend-skripsi';
+const router = createBrowserRouter([
+  { path: `${config.baseUrl}/`, element: <LoginPage />},
+  { path: `${config.baseUrl}/login`, element: <LoginPage /> },
+  { path: `${config.baseUrl}/register`, element: <RegisterPage /> },
+  { path: `${config.baseUrl}/products`, element: <ProductPage /> },
+  { path: '*', element: <ErrorPage/> },
+]);
 
-export const routes = [
-  { path: `${BASE_PATH}/`, component: LoginPage, exact: true },
-  { path: `${BASE_PATH}/login`, component: LoginPage },
-  { path: `${BASE_PATH}/register`, component: RegisterPage },
-  { path: `${BASE_PATH}/products`, component: ProductPage },
-  { path: '*', component: ErrorPage },
-];
+export default router;

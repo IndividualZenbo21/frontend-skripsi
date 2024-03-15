@@ -1,7 +1,7 @@
 import { auth } from '../service/AuthService';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import config from '../config/default.json'
+import config from '../Config/default.json'
 
 function AuthLayouts({ children }) {
     const [authStatus, setAuthStatus] = useState(false);

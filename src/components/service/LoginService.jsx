@@ -1,5 +1,5 @@
-import { httpPost } from "../Api/apiHelper";
-import apiEndPoints from "../Api/apiEndPoints";
+import { httpPost } from "../Api/ApiHelper.jsx";
+import apiEndPoints from "../Api/ApiEndPoints.jsx";
 
 export const login = (data) => {
     return httpPost(apiEndPoints.LOGIN, data)

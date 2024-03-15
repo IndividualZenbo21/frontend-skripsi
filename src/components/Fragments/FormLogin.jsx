@@ -1,6 +1,6 @@
 import * as React from "react"
 import { login } from "../service/LoginService"
-import config from '../config/default.json'
+import config from '../Config/default.json'
 import { useNavigate } from 'react-router-dom';
 
 const FormLogin = () => {

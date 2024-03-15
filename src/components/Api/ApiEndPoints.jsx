@@ -1,4 +1,4 @@
-import config from '../config/default.json'
+import config from '../Config/default.json'
 
 const apiWithoutHost = {
     LOGIN : "/login",

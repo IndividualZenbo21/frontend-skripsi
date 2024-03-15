@@ -14,13 +14,13 @@ function AuthLayouts({ children }) {
                     setAuthStatus(true);
                 } else {
                     setAuthStatus(false);
-                    navigate('*');
+                    navigate('');
                 }
             })
             .catch(error => {
                 console.error('There was an error!', error);
                 setAuthStatus(false);
-                navigate('*');
+                navigate('');
             });
     }, []);
 

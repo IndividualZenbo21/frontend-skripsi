@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import config from '../config/default.json'
 
 function AuthLayouts({ children }) {
-    const [authStatus, setAuthStatus] = useState(null);
+    const [authStatus, setAuthStatus] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,14 +22,11 @@ function AuthLayouts({ children }) {
             .catch(error => {
                 console.error('There was an error!', error);
                 setAuthStatus(false);
-                window.confirm("Authentication failed. Press OK to return to the home page.")
-                navigate(`${config.baseUrl}/`);
+                if (window.confirm("Authentication failed. Press OK to return to the home page.")) {
+                    navigate(`${config.baseUrl}/`);
+                }
             });
     }, []);
-
-    if (authStatus === null) {
-        return <div>Loading...</div>;
-    }
 
     if (authStatus === false) {
         return <div></div>;

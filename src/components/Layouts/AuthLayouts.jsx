@@ -14,17 +14,13 @@ function AuthLayouts({ children }) {
                     setAuthStatus(true);
                 } else {
                     setAuthStatus(false);
-                    if (window.confirm("Authentication failed. Press OK to return to the home page.")) {
-                        navigate(`${config.baseUrl}/`);
-                    }
+                    navigate('*');
                 }
             })
             .catch(error => {
                 console.error('There was an error!', error);
                 setAuthStatus(false);
-                if (window.confirm("Authentication failed. Press OK to return to the home page.")) {
-                    navigate(`${config.baseUrl}/`);
-                }
+                navigate('*');
             });
     }, []);
 

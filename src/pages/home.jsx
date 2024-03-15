@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import './HomePage.css';
+import './styles/HomePage.css';
 import config from "../components/Config/default.json";
 
 function HomePage() {

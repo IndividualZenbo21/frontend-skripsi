@@ -12,7 +12,6 @@ function AuthLayouts({ children }) {
                     setAuthStatus(true);
                 } else {
                     setAuthStatus(false);
-
                 }
             })
             .catch(error => {

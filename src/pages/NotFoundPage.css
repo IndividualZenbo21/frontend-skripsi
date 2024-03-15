@@ -1,0 +1,26 @@
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.title {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.description {
+    margin: 1em 0;
+}
+
+.home-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}

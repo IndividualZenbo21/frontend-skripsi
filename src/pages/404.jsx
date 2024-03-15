@@ -1,14 +1,16 @@
-import { useRouteError } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NotFoundPage.css';
+import config from "../components/Config/default.json";
 
-const ErrorPage = () => {
-    const errort = useRouteError()
+const NotFoundPage = () => {
     return (
-        <div className="flex justify-center min-h-screen items-center flex-col">
-            <h1 className="text-3xl font-bold">Oops!</h1>
-            <p className="my-5 text-xl">Sorry, an unexpected error has occured</p>
-            <p className="my-5 text-xl">{errort.statusText || errort.message}</p>
+        <div className="not-found-page">
+            <h1 className="title">404</h1>
+            <p className="description">We're sorry, but the page you were looking for doesn't exist.</p>
+            <Link to={`${config.baseUrl}/`} className="home-link">Back to Home</Link>
         </div>
-    )
-}
+    );
+};
 
-export default ErrorPage
+export default NotFoundPage;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './NotFoundPage.css';
 import config from "../components/Config/default.json";

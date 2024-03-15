@@ -15,7 +15,7 @@ function AuthLayouts({ children }) {
                 } else {
                     setAuthStatus(false);
                     if (window.confirm("Authentication failed. Press OK to return to the home page.")) {
-                        avigate(`${config.baseUrl}/`);
+                        navigate(`${config.baseUrl}/`);
                     }
                 }
             })

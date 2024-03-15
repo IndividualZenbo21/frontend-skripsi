@@ -1,11 +1,9 @@
 import { auth } from '../service/AuthService';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import config from '../Config/default.json'
+import NotFoundPage from "../../pages/404.jsx";
 
 function AuthLayouts({ children }) {
     const [authStatus, setAuthStatus] = useState(false);
-    const navigate = useNavigate();
 
     useEffect(() => {
         auth()
@@ -14,18 +12,17 @@ function AuthLayouts({ children }) {
                     setAuthStatus(true);
                 } else {
                     setAuthStatus(false);
-                    navigate('');
+
                 }
             })
             .catch(error => {
                 console.error('There was an error!', error);
                 setAuthStatus(false);
-                navigate('');
             });
     }, []);
 
     if (authStatus === false) {
-        return <div></div>;
+        return <NotFoundPage/>;
     }
 
     return (

@@ -22,9 +22,8 @@ function AuthLayouts({ children }) {
             .catch(error => {
                 console.error('There was an error!', error);
                 setAuthStatus(false);
-                if (window.confirm("Authentication failed. Press OK to return to the home page.")) {
-                    navigate(`${config.baseUrl}/`);
-                }
+                window.confirm("Authentication failed. Press OK to return to the home page.")
+                navigate(`${config.baseUrl}/`);
             });
     }, []);
 

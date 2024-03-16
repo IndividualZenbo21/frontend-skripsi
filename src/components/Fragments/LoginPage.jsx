@@ -39,17 +39,14 @@ const LoginPage = () => {
     }, [formState]);
 
     return (
-        <form className="login-form">
-            <div className="mb-6">
-                <label className="email-label" htmlFor="email">Email</label>
-                <input className="email-input" label="email" type="email" placeholder="example@mail.com"
-                       onChange={setHandleFormChange('email')}/>
-            </div>
-            <div className="mb-6">
-                <label className="password-label" htmlFor="password">Password</label>
-                <input className="password-input" label="password" type="password" placeholder="*****"
-                       onChange={setHandleFormChange('password')}/>
-            </div>
+        <div className="login-form">
+            <h2>Login</h2>
+            <label className="email-label" htmlFor="email">Email</label>
+            <input className="email-input" type="email" placeholder="example@mail.com"
+                   onChange={setHandleFormChange('email')}/>
+            <label className="password-label" htmlFor="password">Password</label>
+            <input className="password-input" type="password" placeholder="*****"
+                   onChange={setHandleFormChange('password')}/>
             <button
                 className="login-button"
                 type="submit"
@@ -57,7 +54,10 @@ const LoginPage = () => {
                 onClick={executeLogin}>
                 Login
             </button>
-        </form>
+            <div className="register-link">
+                Don't have an account? <a href="#">Register</a>
+            </div>
+        </div>
 
     )
 }

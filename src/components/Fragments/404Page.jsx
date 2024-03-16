@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import './styles/NotFoundPage.css';
+import './styles/404Page.css';
 import config from "../Config/default.json";
 
 const NotFoundPage = () => {

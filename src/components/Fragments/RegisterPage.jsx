@@ -1,35 +1,75 @@
+import './styles/LoginPage.css';
+import {login} from "../service/LoginService.jsx";
+import config from "../Config/default.json";
+import * as React from "react";
+import {useNavigate} from "react-router-dom";
 const RegisterPage = () => {
+    const [formState, setFormState] = React.useState({
+        email: '',
+        password: ''
+    });
+    const navigate = useNavigate();
+
+    const executeRegister = async () => {
+
+
+        const {email, password} = formState;
+        const data = {
+            email: String(email),
+            password: String(password)
+        };
+        const response = await login(data);
+
+        if (response && response.status === 'OK') {
+            navigate(`${config.baseUrl}/login`);
+        } else {
+            console.error('Register Failed');
+        }
+    }
+
+    const setHandleFormChange = (type) => (event) => {
+        const newFormState = {
+            ...formState,
+            [type]: event.target.value,
+        };
+        setFormState(newFormState);
+    };
+
+    const isDisabled = React.useMemo(() => {
+        return formState.email === '' || formState.password === '';
+    }, [formState]);
+
     return (
-        <>
-            <div className="mb-6">
-                <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="fullname">Fullname</label>
-                <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50"
-                       label="fullname" type="text" placeholder="insert your name here..." name="fullname"
-                       id="fullname"/>
-            </div>
-            <div className="mb-6">
-                <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
-                <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50"
-                       label="email" type="email" placeholder="example@mail.com" name="email" id="email"/>
-            </div>
-            <div className="mb-6">
-                <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-                <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50"
-                       label="password" type="password" placeholder="*****" name="password" id="password"/>
-            </div>
-            <div className="mb-6">
-                <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="confirmPassword">Confirm
-                    Password</label>
-                <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50"
-                       label="confirmPassword" type="password" placeholder="*****" name="confirPassword"
-                       id="confirmPassword"/>
-            </div>
-            <button
-                className="h-10 px-6 font-semibold rounded-md bg-blue-600 w-full text-white">
-                Register
-            </button>
-        </>
+        <div className="login-form">
+            <h1>Register</h1>
+            <form onSubmit={event => {
+                event.preventDefault();
+                executeRegister();
+            }}>
+                <div>
+                    <label className="name-label" htmlFor="fullname">Fullname</label>
+                    <input className="name-input" type="text" placeholder="insert your name here..." name="fullname"/>
+                </div>
+                <div>
+                    <label className="email-label" htmlFor="email">Email</label>
+                    <input className="email-input" type="email" placeholder="example@mail.com" name="email"/>
+                </div>
+                <div>
+                    <label className="password-label" htmlFor="password">Password</label>
+                    <input className="password-input" type="password" placeholder="*****" name="password"/>
+                </div>
+                <div>
+                    <label className="password-label" htmlFor="confirmPassword">Confirm Password</label>
+                    <input className="password-input" type="password" placeholder="*****" name="confirPassword"/>
+                </div>
+                <button
+                    className="register-button">
+                    Register
+                </button>
+            </form>
+
+        </div>
     )
 }
 
-export default RegisterPage
+export default RegisterPage;

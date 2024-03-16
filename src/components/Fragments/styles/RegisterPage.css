@@ -63,3 +63,8 @@ button[type="submit"]:disabled {
     color: #0056b3;
     text-decoration: none;
 }
+
+.password-warning {
+    color: red;
+    font-weight: bold;
+}

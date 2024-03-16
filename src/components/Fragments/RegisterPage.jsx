@@ -43,13 +43,13 @@ const RegisterPage = () => {
     };
 
     const doPasswordsMatch = React.useCallback(() => {
-        const { password, confirmPassword } = formState;
+        const {password, confirmPassword} = formState;
         return password === confirmPassword;
     }, [formState]);
 
     const isDisabled = React.useMemo(() => {
         return formState.fullName === '' || formState.email === '' || formState.password === '' || formState.confirmPassword === '' || !passwordsMatch;
-    }, [formState, doPasswordsMatch]);
+    }, [formState, passwordsMatch]);
 
     return (
         <div className="register-form">
@@ -60,22 +60,27 @@ const RegisterPage = () => {
             }}>
                 <div>
                     <label className="name-label" htmlFor="fullname">Fullname</label>
-                    <input className="name-input" type="text" onChange={setHandleFormChange} placeholder="insert your name here..." name="fullName"/>
+                    <input className="name-input" type="text" onChange={setHandleFormChange}
+                           placeholder="insert your name here..." name="fullName"/>
                 </div>
                 <div>
                     <label className="email-label" htmlFor="email">Email</label>
-                    <input className="email-input" type="email" onChange={setHandleFormChange} placeholder="example@mail.com" name="email"/>
+                    <input className="email-input" type="email" onChange={setHandleFormChange}
+                           placeholder="example@mail.com" name="email"/>
                 </div>
                 <div>
                     <label className="password-label" htmlFor="password">Password</label>
-                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****" name="password"/>
+                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****"
+                           name="password"/>
                 </div>
                 <div>
                     <label className="password-label" htmlFor="confirmPassword">Confirm Password</label>
-                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****" name="confirmPassword"/>
+                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****"
+                           name="confirmPassword"/>
                 </div>
                 <div>
-                    { !passwordsMatch && <p>Passwords do not match</p> }
+                    {formState.confirmPassword !== '' && !passwordsMatch &&
+                        <p className="password-warning">Passwords do not match</p>}
                 </div>
                 <button
                     className="register-button"

@@ -41,7 +41,7 @@ const LoginPage = () => {
     return (
         <div className="login-form">
             <h2>Login</h2>
-            <form autoComplete="on" onSubmit={(event) => {
+            <form onSubmit={(event) => {
                 event.preventDefault();
                 executeLogin();
             }}>

@@ -13,6 +13,11 @@ const RegisterPage = () => {
         confirmPassword: ''
     });
     const navigate = useNavigate();
+    const [passwordsMatch, setPasswordsMatch] = React.useState(false);
+
+    React.useEffect(() => {
+        setPasswordsMatch(doPasswordsMatch());
+    }, [doPasswordsMatch]);
 
     const executeRegister = async () => {
         const {email, password} = formState;
@@ -43,7 +48,7 @@ const RegisterPage = () => {
     }, [formState]);
 
     const isDisabled = React.useMemo(() => {
-        return formState.fullName === '' || formState.email === '' || formState.password === '' || formState.confirmPassword === '' || !doPasswordsMatch();
+        return formState.fullName === '' || formState.email === '' || formState.password === '' || formState.confirmPassword === '' || !passwordsMatch;
     }, [formState, doPasswordsMatch]);
 
     return (
@@ -55,7 +60,7 @@ const RegisterPage = () => {
             }}>
                 <div>
                     <label className="name-label" htmlFor="fullname">Fullname</label>
-                    <input className="name-input" type="text" onChange={setHandleFormChange} placeholder="insert your name here..." name="fullname"/>
+                    <input className="name-input" type="text" onChange={setHandleFormChange} placeholder="insert your name here..." name="fullName"/>
                 </div>
                 <div>
                     <label className="email-label" htmlFor="email">Email</label>
@@ -70,7 +75,7 @@ const RegisterPage = () => {
                     <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****" name="confirmPassword"/>
                 </div>
                 <div>
-                    { !doPasswordsMatch() && <p>Passwords do not match</p> }
+                    { !passwordsMatch && <p>Passwords do not match</p> }
                 </div>
                 <button
                     className="register-button"

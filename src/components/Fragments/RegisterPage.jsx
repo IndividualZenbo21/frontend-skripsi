@@ -2,8 +2,9 @@ import './styles/LoginPage.css';
 import {login} from "../service/LoginService.jsx";
 import config from "../Config/default.json";
 import * as React from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import './styles/RegisterPage.css'
+
 const RegisterPage = () => {
     const [formState, setFormState] = React.useState({
         fullName: '',
@@ -79,7 +80,7 @@ const RegisterPage = () => {
                 </button>
             </form>
             <div className="login-link">
-                Already have an account? <a href={`${config.baseUrl}/login`}>Login</a>
+                Already have an account? <Link to={`${config.baseUrl}/login`}>Login</Link>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import * as React from "react"
 import {login} from "../service/LoginService"
 import config from '../Config/default.json'
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './styles/LoginPage.css';
 
 const LoginPage = () => {
@@ -59,7 +59,7 @@ const LoginPage = () => {
                 </button>
             </form>
             <div className="register-link">
-                Don't have an account? <a href={`${config.baseUrl}/register`}>Register</a>
+                Don't have an account? <Link to={`${config.baseUrl}/register`}>Register</Link>
             </div>
         </div>
 

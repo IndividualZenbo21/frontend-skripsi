@@ -34,7 +34,7 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #007bff;
     color: #fff;
     padding: 14px 20px;
     border: none;
@@ -57,6 +57,6 @@ button[type="submit"]:disabled {
 }
 
 .register-link a {
-    color: #4CAF50;
+    color: #0056b3;
     text-decoration: none;
 }

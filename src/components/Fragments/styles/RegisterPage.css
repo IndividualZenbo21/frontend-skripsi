@@ -68,5 +68,6 @@ button[type="submit"]:disabled {
     color: red;
     font-weight: bold;
     position: relative;
-    top: -20px;
+    top: -15px;
+    margin-bottom: -15px;
 }

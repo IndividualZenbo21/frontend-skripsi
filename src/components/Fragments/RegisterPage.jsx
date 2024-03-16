@@ -13,7 +13,7 @@ const RegisterPage = () => {
         confirmPassword: ''
     });
     const navigate = useNavigate();
-    const [passwordsMatch, setPasswordsMatch] = React.useState(false);
+    const [passwordsMatch, setPasswordsMatch] = React.useState(true);
 
     const executeRegister = async () => {
         const {email, password} = formState;

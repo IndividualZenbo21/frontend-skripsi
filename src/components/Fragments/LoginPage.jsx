@@ -39,7 +39,7 @@ const LoginPage = () => {
     }, [formState]);
 
     return (
-        <div className="login-form">
+        <form className="login-form">
             <div className="mb-6">
                 <label className="email-label" htmlFor="email">Email</label>
                 <input className="email-input" label="email" type="email" placeholder="example@mail.com"
@@ -57,7 +57,7 @@ const LoginPage = () => {
                 onClick={executeLogin}>
                 Login
             </button>
-        </div>
+        </form>
 
     )
 }

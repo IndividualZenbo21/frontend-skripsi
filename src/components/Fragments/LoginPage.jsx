@@ -55,7 +55,7 @@ const LoginPage = () => {
                 Login
             </button>
             <div className="register-link">
-                Don't have an account? <a href="#">Register</a>
+                Don't have an account? <a href={`${config.baseUrl}/register`}>Register</a>
             </div>
         </div>
 

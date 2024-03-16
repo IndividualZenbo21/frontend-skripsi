@@ -4,7 +4,8 @@ This project is a frontend application for a User Level Access Manager. It's par
 
 ## Project Overview
 
-The User Level Access Manager is a web application that allows administrators to manage user access levels within a system. It provides an intuitive interface for creating, updating, and deleting user roles and permissions.
+The User Level Access Manager is a web application that allows administrators to manage user access levels within a system. It provides an intuitive
+interface for creating, updating, and deleting user roles and permissions.
 
 ## Technologies Used
 
@@ -33,7 +34,8 @@ To get a local copy up and running, follow these steps:
 
 ## Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly
+appreciated.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

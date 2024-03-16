@@ -1,9 +1,9 @@
 import LoginPage from "../components/Fragments/LoginPage.jsx"
 
 const Login = () => {
-    return (
-        <LoginPage/>
-    )
+  return (
+      <LoginPage/>
+  )
 }
 
 export default Login

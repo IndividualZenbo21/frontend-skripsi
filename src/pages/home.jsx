@@ -1,9 +1,9 @@
 import HomePage from "../components/Fragments/HomePage.jsx"
 
 const Home = () => {
-    return (
-        < HomePage/>
-    )
+  return (
+      < HomePage/>
+  )
 }
 
 export default Home;

@@ -1,3 +1,4 @@
+import config from "../Config/default.json";
 import './styles/UnauthorizedPage.css';
 
 export default function UnauthorizedPage() {

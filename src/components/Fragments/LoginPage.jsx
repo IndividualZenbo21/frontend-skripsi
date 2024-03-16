@@ -41,18 +41,20 @@ const LoginPage = () => {
     return (
         <div className="login-form">
             <h2>Login</h2>
-            <form>
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                executeLogin();
+            }}>
                 <label className="email-label" htmlFor="email">Email</label>
                 <input className="email-input" type="email" placeholder="example@mail.com"
-                       onChange={setHandleFormChange('email')}/>
+                       onChange={setHandleFormChange('email')} autoComplete="on"/>
                 <label className="password-label" htmlFor="password">Password</label>
                 <input className="password-input" type="password" placeholder="*****"
                        onChange={setHandleFormChange('password')}/>
                 <button
                     className="login-button"
                     type="submit"
-                    disabled={isDisabled}
-                    onClick={executeLogin}>
+                    disabled={isDisabled}>
                     Login
                 </button>
             </form>

@@ -17,12 +17,12 @@ The User Level Access Manager is a web application that allows administrators to
 
 To get a local copy up and running, follow these steps:
 
-1. Clone the repository:
-   git clone https://github.com/IndividualZenbo21/frontend-skripsi.git
-2. Install the dependencies:
-   npm install
-3. Start the development server:
-   npm run dev
+1. Clone the repository :
+   **git clone https://github.com/IndividualZenbo21/frontend-skripsi.git**
+2. Install the dependencies :
+   **npm install**
+3. Start the development server :
+   **npm run dev**
 
 ## Features
 

@@ -40,7 +40,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-form">
-            <h2>Login</h2>
+            <h1>Login</h1>
             <label className="email-label" htmlFor="email">Email</label>
             <input className="email-input" type="email" placeholder="example@mail.com"
                    onChange={setHandleFormChange('email')} autoComplete="on" name="email"/>

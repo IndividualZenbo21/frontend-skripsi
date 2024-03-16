@@ -67,4 +67,6 @@ button[type="submit"]:disabled {
 .password-warning {
     color: red;
     font-weight: bold;
+    position: relative;
+    top: -20px;
 }

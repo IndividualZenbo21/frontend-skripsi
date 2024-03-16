@@ -47,7 +47,7 @@ const LoginPage = () => {
             }}>
                 <label className="email-label" htmlFor="email">Email</label>
                 <input className="email-input" type="email" placeholder="example@mail.com"
-                       onChange={setHandleFormChange('email')} autoComplete="on"/>
+                       onChange={setHandleFormChange('email')} autoComplete="on" name="email"/>
                 <label className="password-label" htmlFor="password">Password</label>
                 <input className="password-input" type="password" placeholder="*****"
                        onChange={setHandleFormChange('password')}/>

@@ -6,14 +6,14 @@ import {useNavigate} from "react-router-dom";
 import './styles/RegisterPage.css'
 const RegisterPage = () => {
     const [formState, setFormState] = React.useState({
+        fullName: '',
         email: '',
-        password: ''
+        password: '',
+        confirmPassword: ''
     });
     const navigate = useNavigate();
 
     const executeRegister = async () => {
-
-
         const {email, password} = formState;
         const data = {
             email: String(email),
@@ -28,17 +28,22 @@ const RegisterPage = () => {
         }
     }
 
-    const setHandleFormChange = (type) => (event) => {
+    const setHandleFormChange = (event) => {
         const newFormState = {
             ...formState,
-            [type]: event.target.value,
+            [event.target.name]: event.target.value,
         };
         setFormState(newFormState);
     };
 
-    const isDisabled = React.useMemo(() => {
-        return formState.fullname === '' || formState.email === '' || formState.password === '' || formState.confirPassword === '';
+    const doPasswordsMatch = React.useCallback(() => {
+        const { password, confirmPassword } = formState;
+        return password === confirmPassword;
     }, [formState]);
+
+    const isDisabled = React.useMemo(() => {
+        return formState.fullName === '' || formState.email === '' || formState.password === '' || formState.confirmPassword === '' || !doPasswordsMatch();
+    }, [formState, doPasswordsMatch]);
 
     return (
         <div className="register-form">
@@ -49,11 +54,11 @@ const RegisterPage = () => {
             }}>
                 <div>
                     <label className="name-label" htmlFor="fullname">Fullname</label>
-                    <input className="name-input" type="text" placeholder="insert your name here..." name="fullname"/>
+                    <input className="name-input" type="text" onChange={setHandleFormChange} placeholder="insert your name here..." name="fullname"/>
                 </div>
                 <div>
                     <label className="email-label" htmlFor="email">Email</label>
-                    <input className="email-input" type="email" placeholder="example@mail.com" name="email"/>
+                    <input className="email-input" type="email" onChange={setHandleFormChange} placeholder="example@mail.com" name="email"/>
                 </div>
                 <div>
                     <label className="password-label" htmlFor="password">Password</label>
@@ -61,7 +66,10 @@ const RegisterPage = () => {
                 </div>
                 <div>
                     <label className="password-label" htmlFor="confirmPassword">Confirm Password</label>
-                    <input className="password-input" type="password" placeholder="*****" name="confirPassword"/>
+                    <input className="password-input" type="password" placeholder="*****" name="confirmPassword"/>
+                </div>
+                <div>
+                    { !doPasswordsMatch() && <p>Passwords do not match</p> }
                 </div>
                 <button
                     className="register-button"

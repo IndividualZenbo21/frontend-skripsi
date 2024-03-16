@@ -26,10 +26,10 @@ const LoginPage = () => {
         }
     }
 
-    const setHandleFormChange = (type) => (event) => {
+    const setHandleFormChange = (event) => {
         const newFormState = {
             ...formState,
-            [type]: event.target.value,
+            [event.target.name]: event.target.value,
         };
         setFormState(newFormState);
     };
@@ -47,10 +47,10 @@ const LoginPage = () => {
             }}>
                 <label className="email-label" htmlFor="email">Email</label>
                 <input className="email-input" type="email" placeholder="example@mail.com"
-                       onChange={setHandleFormChange('email')} autoComplete="on" name="email"/>
+                       onChange={setHandleFormChange} autoComplete="on" name="email"/>
                 <label className="password-label" htmlFor="password">Password</label>
                 <input className="password-input" type="password" placeholder="*****"
-                       onChange={setHandleFormChange('password')} name="password"/>
+                       onChange={setHandleFormChange} name="password"/>
                 <button
                     className="login-button"
                     type="submit"

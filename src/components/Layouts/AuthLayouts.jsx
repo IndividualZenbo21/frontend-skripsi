@@ -8,7 +8,7 @@ function AuthLayouts({children}) {
     useEffect(() => {
         auth()
             .then(response => {
-                if (response.status === 200) {
+                if (response.status === 'OK') {
                     setAuthStatus(true);
                 } else {
                     setAuthStatus(false);

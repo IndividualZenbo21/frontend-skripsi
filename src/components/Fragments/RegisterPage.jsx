@@ -62,11 +62,11 @@ const RegisterPage = () => {
                 </div>
                 <div>
                     <label className="password-label" htmlFor="password">Password</label>
-                    <input className="password-input" type="password" placeholder="*****" name="password"/>
+                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****" name="password"/>
                 </div>
                 <div>
                     <label className="password-label" htmlFor="confirmPassword">Confirm Password</label>
-                    <input className="password-input" type="password" placeholder="*****" name="confirmPassword"/>
+                    <input className="password-input" type="password" onChange={setHandleFormChange} placeholder="*****" name="confirmPassword"/>
                 </div>
                 <div>
                     { !doPasswordsMatch() && <p>Passwords do not match</p> }

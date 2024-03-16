@@ -15,10 +15,6 @@ const RegisterPage = () => {
     const navigate = useNavigate();
     const [passwordsMatch, setPasswordsMatch] = React.useState(false);
 
-    React.useEffect(() => {
-        setPasswordsMatch(doPasswordsMatch());
-    }, [doPasswordsMatch]);
-
     const executeRegister = async () => {
         const {email, password} = formState;
         const data = {
@@ -46,6 +42,10 @@ const RegisterPage = () => {
         const {password, confirmPassword} = formState;
         return password === confirmPassword;
     }, [formState]);
+
+    React.useEffect(() => {
+        setPasswordsMatch(doPasswordsMatch());
+    }, [doPasswordsMatch]);
 
     const isDisabled = React.useMemo(() => {
         return formState.fullName === '' || formState.email === '' || formState.password === '' || formState.confirmPassword === '' || !passwordsMatch;

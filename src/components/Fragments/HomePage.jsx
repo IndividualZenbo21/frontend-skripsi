@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom";
 import config from "../Config/default.json";
 import './styles/HomePage.css';
 import { Fragment } from "react";
+import Navbar from "../Fragments/Navbar";
 
 const HomePage = () => {
   const navigate = useNavigate();

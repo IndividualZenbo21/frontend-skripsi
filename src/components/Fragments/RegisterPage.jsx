@@ -3,6 +3,7 @@ import {login} from "../service/LoginService.jsx";
 import config from "../Config/default.json";
 import * as React from "react";
 import {useNavigate} from "react-router-dom";
+import './styles/RegisterPage.css'
 const RegisterPage = () => {
     const [formState, setFormState] = React.useState({
         email: '',
@@ -40,7 +41,7 @@ const RegisterPage = () => {
     }, [formState]);
 
     return (
-        <div className="login-form">
+        <div className="register-form">
             <h1>Register</h1>
             <form onSubmit={event => {
                 event.preventDefault();
@@ -67,7 +68,9 @@ const RegisterPage = () => {
                     Register
                 </button>
             </form>
-
+            <div className="login-link">
+                Already have an account? <a href={`${config.baseUrl}/login`}>Login</a>
+            </div>
         </div>
     )
 }

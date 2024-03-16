@@ -2,7 +2,7 @@ import * as React from "react"
 import { login } from "../service/LoginService"
 import config from '../Config/default.json'
 import { useNavigate } from 'react-router-dom';
-import '../components/Fragments/styles/LoginPage.css';
+import './styles/LoginPage.css';
 
 const LoginPage = () => {
   const [formState, setFormState] = React.useState({

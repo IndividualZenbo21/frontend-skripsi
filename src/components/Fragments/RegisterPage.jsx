@@ -37,7 +37,7 @@ const RegisterPage = () => {
     };
 
     const isDisabled = React.useMemo(() => {
-        return formState.email === '' || formState.password === '';
+        return formState.fullname === '' || formState.email === '' || formState.password === '' || formState.confirPassword === '';
     }, [formState]);
 
     return (
@@ -64,7 +64,9 @@ const RegisterPage = () => {
                     <input className="password-input" type="password" placeholder="*****" name="confirPassword"/>
                 </div>
                 <button
-                    className="register-button">
+                    className="register-button"
+                    type="submit"
+                    disabled={isDisabled}>
                     Register
                 </button>
             </form>

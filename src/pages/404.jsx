@@ -1,4 +1,4 @@
-import NotFoundPage  from '../components/Fragments/404Page.jsx';
+import NotFoundPage from '../components/Fragments/404Page.jsx';
 
 const NotFound = () => {
     return (

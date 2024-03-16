@@ -1,10 +1,10 @@
 import config from '../Config/default.json'
 
 const apiWithoutHost = {
-    LOGIN : "/login",
+    LOGIN: "/login",
     REGISTER: "/register",
     PRODUCTS: "/products",
-    AUTH : "/api/auth/test",
+    AUTH: "/api/auth/test",
 };
 
 const apiEndPoints = Object.keys(apiWithoutHost).reduce((a, b) => {

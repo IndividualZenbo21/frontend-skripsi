@@ -1,10 +1,10 @@
 import React from "react";
 
-class Counter extends React.Component{
+class Counter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            count:0
+            count: 0
         }
         console.log("Constructor")
     }
@@ -17,7 +17,7 @@ class Counter extends React.Component{
 
     componentDidUpdate(prevProps, prevState) {
         console.log("componentDidUpdate")
-        if(this.state.count === 10){
+        if (this.state.count === 10) {
             this.setState({count: 0})
         }
     }

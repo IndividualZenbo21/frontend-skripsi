@@ -1,8 +1,8 @@
-import { auth } from '../service/AuthService';
-import { useEffect, useState } from 'react';
+import {auth} from '../service/AuthService';
+import {useEffect, useState} from 'react';
 import NotFoundPage from "../../pages/404.jsx";
 
-function AuthLayouts({ children }) {
+function AuthLayouts({children}) {
     const [authStatus, setAuthStatus] = useState(false);
 
     useEffect(() => {

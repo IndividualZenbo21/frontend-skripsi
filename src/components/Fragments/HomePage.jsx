@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="home">
             <h1>Welcome to User Level Access Manager</h1>
             <p>Manage access levels efficiently and effectively.</p>
-            <button className="login-button" onClick={handleLoginClick}>Login</button>
+            <button className="home-login-button" onClick={handleLoginClick}>Login</button>
         </div>
     );
 

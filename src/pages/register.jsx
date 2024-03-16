@@ -1,9 +1,9 @@
-import FormRegister from "../components/Fragments/FormRegister"
+import RegisterPage from "../components/Fragments/RegisterPage.jsx"
 
-const RegisterPage = () => {
+const Register = () => {
     return (
-    <FormRegister/>
+    <RegisterPage/>
     )
 }
 
-export default RegisterPage
+export default Register

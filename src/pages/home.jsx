@@ -1,21 +1,9 @@
-import { useNavigate } from 'react-router-dom';
-import './styles/HomePage.css';
-import config from "../components/Config/default.json";
+import HomePage from "../components/Fragments/HomePage.jsx"
 
-function HomePage() {
-    const navigate = useNavigate();
-
-    const handleLoginClick = () => {
-        navigate(`${config.baseUrl}/login`);
-    };
-
+const Home = () => {
     return (
-        <div className="home">
-            <h1>Welcome to User Level Access Manager</h1>
-            <p>Manage access levels efficiently and effectively.</p>
-            <button className="login-button" onClick={handleLoginClick}>Login</button>
-        </div>
-    );
+        < HomePage/>
+    )
 }
 
-export default HomePage;
+export default Home;

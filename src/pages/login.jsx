@@ -1,9 +1,9 @@
-import FormLogin from "../components/Fragments/FormLogin"
+import LoginPage from "../components/Fragments/LoginPage.jsx"
 
-const LoginPage = () => {
+const Login = () => {
     return (
-    <FormLogin/>
+    <LoginPage/>
     )
 }
 
-export default LoginPage
+export default Login

@@ -1,12 +1,12 @@
-import Product from "../components/Fragments/Product"
+import ProductPage from "../components/Fragments/./ProductPage.jsx"
 import AuthLayout from "../components/Layouts/AuthLayouts"
 
-const ProductPage = () => {
+const Product = () => {
     return (
         <AuthLayout>
-            <Product/>
+            <ProductPage/>
         </AuthLayout>
     )
 }
 
-export default ProductPage
+export default Product

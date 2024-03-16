@@ -39,24 +39,26 @@ const LoginPage = () => {
   }, [formState]);
 
     return (
-      <>
-      <div className="mb-6">
-            <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
-            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="email" type="email" placeholder="example@mail.com" onChange={setHandleFormChange('email')}/>
+        <div className="login-form">
+          <div className="mb-6">
+            <label className="email-label" htmlFor="email">Email</label>
+            <input className="email-input" label="email" type="email" placeholder="example@mail.com"
+                   onChange={setHandleFormChange('email')}/>
           </div>
           <div className="mb-6">
-            <label className="block text-slate-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-            <input className="text-sm border rounded w-full py-2 px-3 text-slate-700 placeholder: opacity-50" label="password" type="password" placeholder="*****" onChange={setHandleFormChange('password')}/>
+            <label className="password-label" htmlFor="password">Password</label>
+            <input className="password-input" label="password" type="password" placeholder="*****"
+                   onChange={setHandleFormChange('password')}/>
           </div>
           <button
-            className="h-10 px-6 font-semibold rounded-md bg-blue-600 text-white"
-            type="submit"
-            disabled={isDisabled}
-            onClick={executeLogin}>
-              Login
+              className="login-button"
+              type="submit"
+              disabled={isDisabled}
+              onClick={executeLogin}>
+            Login
           </button>
-      </>
-          
+        </div>
+
     )
 }
 

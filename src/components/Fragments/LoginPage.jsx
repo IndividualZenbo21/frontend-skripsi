@@ -41,19 +41,21 @@ const LoginPage = () => {
     return (
         <div className="login-form">
             <h2>Login</h2>
-            <label className="email-label" htmlFor="email">Email</label>
-            <input className="email-input" type="email" placeholder="example@mail.com"
-                   onChange={setHandleFormChange('email')}/>
-            <label className="password-label" htmlFor="password">Password</label>
-            <input className="password-input" type="password" placeholder="*****"
-                   onChange={setHandleFormChange('password')}/>
-            <button
-                className="login-button"
-                type="submit"
-                disabled={isDisabled}
-                onClick={executeLogin}>
-                Login
-            </button>
+            <form>
+                <label className="email-label" htmlFor="email">Email</label>
+                <input className="email-input" type="email" placeholder="example@mail.com"
+                       onChange={setHandleFormChange('email')}/>
+                <label className="password-label" htmlFor="password">Password</label>
+                <input className="password-input" type="password" placeholder="*****"
+                       onChange={setHandleFormChange('password')}/>
+                <button
+                    className="login-button"
+                    type="submit"
+                    disabled={isDisabled}
+                    onClick={executeLogin}>
+                    Login
+                </button>
+            </form>
             <div className="register-link">
                 Don't have an account? <a href="#">Register</a>
             </div>

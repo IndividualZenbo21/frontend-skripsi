@@ -46,7 +46,7 @@ const LoginPage = () => {
                    onChange={setHandleFormChange('email')} autoComplete="on" name="email"/>
             <label className="password-label" htmlFor="password">Password</label>
             <input className="password-input" type="password" placeholder="*****"
-                   onChange={setHandleFormChange('password')}/>
+                   onChange={setHandleFormChange('password')} autoComplete="on" name="password"/>
             <button
                 className="login-button"
                 type="submit"
